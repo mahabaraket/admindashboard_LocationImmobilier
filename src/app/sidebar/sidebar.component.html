@@ -1,0 +1,179 @@
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="index3.html" class="brand-link">
+      <img src="assets/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Admin</span>
+    </a>
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- hhhhhhhhhhhhhhhhhhhh -->
+   
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          
+          
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-copy"></i>
+              <p>
+                gestion des biens <br> a louer  
+                <i class="fas fa-angle-left right"></i>
+                
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a class="nav-link"[routerLink]="['/listBien']" routerLinkActive="router-link-active" >
+                        <i class="far fa-circle nav-icon"></i>
+                      <p> liste de biens  </p>
+                    </a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/addBien']" routerLinkActive="router-link-active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p> ajouter un bien </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/gererBien']" routerLinkActive="router-link-active">
+                    <i class="far fa-circle nav-icon"></i>
+                  <p>gerer un bien </p>
+                </a>
+              </li>
+              
+              
+          
+              
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-chart-pie"></i>
+              <p>
+                gestion des <br> responsables  maintenance  
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a class="nav-link"[routerLink]="['/listTech']" routerLinkActive="router-link-active">
+                    <i class="far fa-circle nav-icon"></i>
+                      <p>liste de  techniciens </p>
+                    </a>
+                  </li>
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/addTech']" routerLinkActive="router-link-active">
+                    <i class="far fa-circle nav-icon"></i>
+                  <p>Ajouter un technicien</p> 
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/gererTech']" routerLinkActive="router-link-active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>gerer un technicien </p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Reclamations  
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Consultation </p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+
+          <li class="nav-header">a eliminee </li>
+      
+          
+          
+             
+         
+         
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon far fa-plus-square"></i>
+              <p>
+                Extras
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/login']" routerLinkActive="router-link-active" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Login</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                profil 
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/profilTech']" routerLinkActive="router-link-active" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Consulter profil </p> 
+                </a>
+              </li>
+
+            </ul>
+            <ul class="nav nav-treeview"> 
+              <li class="nav-item">
+                <a class="nav-link"[routerLink]="['/modifierProfil']" routerLinkActive="router-link-active" >
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Modifier profil </p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tree"></i>
+              <p>
+                Reclamations  (thecnicien)
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/UI/general.html" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Consultation </p>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+        
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>

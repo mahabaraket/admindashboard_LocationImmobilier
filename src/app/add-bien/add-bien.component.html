@@ -1,0 +1,114 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-6">
+        <!-- general form elements -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">Ajouter un nouveau bien a louer </h3>
+          </div>
+          <!-- /.card-header -->
+          <!-- form start -->
+          <form [formGroup]="addBienForm" (ngSubmit)="onSubmit()" >
+            <div class="card-body">
+              <div class="form-group">
+                <label>propriétaire</label>
+                  <select  formControlName="propName" class="form-control select1" style="width: 100%;" [ngClass]="{ 'is-invalid': submitted && f.propName.errors }">
+                    <option>mokhtar</option>
+                    <option>salah</option>
+                    <option>ammar</option>
+                    <option>touhami</option>
+                    <option>mabrouk</option>
+                    <option></option>
+                  </select>
+                  <div *ngIf="submitted && f.propName.errors" class="invalid-feedback">
+                    <div *ngIf="f.propName.errors.required">proprietaire Name  is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Emplacement</label>
+                <input formControlName="place" type="text" class="form-control" id="exampleInputPassword1" placeholder=""[ngClass]="{ 'is-invalid': submitted && f.place.errors }" />
+                <div *ngIf="submitted && f.place.errors" class="invalid-feedback">
+                    <div *ngIf="f.place.errors.required">Last Name is required</div>
+                </div>
+                </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Superficie</label>
+                <input formControlName="Superficie"  type="text" class="form-control" id="exampleInputPassword1" placeholder=""[ngClass]="{ 'is-invalid': submitted && f.Superficie.errors }">
+                <div *ngIf="submitted && f.Superficie.errors" class="invalid-feedback">
+                    <div *ngIf="f.Superficie.errors.required">Superficie  is required</div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="exampleInputPassword1">Typologie </label>
+                <select  formControlName="Typologie" class="form-control select2" style="width: 100%;"[ngClass]="{ 'is-invalid': submitted && f.Typologie.errors }" >
+                    <option>S0</option>
+                    <option>S+1</option>
+                    <option>S+2</option>
+                    <option>S+3</option>
+                    <option>S+4</option>
+                    <option>S+5</option>
+                    <option></option>
+                  </select>
+                  <div *ngIf="submitted && f.Typologie.errors" class="invalid-feedback">
+                    <div *ngIf="f.Typologie.errors.required">Typologie  is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Etage</label>
+                <select formControlName="etage" class="form-control select2" style="width: 100%;"[ngClass]="{ 'is-invalid': submitted && f.etage.errors }"  >
+                    <option selected="selected">rez de chaussée</option>
+                    <option>1eme</option>
+                    <option>2eme</option>
+                    <option>3eme</option>
+                    <option>4eme</option>
+                    <option>6eme</option>
+                    <option>7eme</option>
+                    <option></option>
+                  </select>      
+                  <div *ngIf="submitted && f.etage.errors" class="invalid-feedback">
+                    <div *ngIf="f.etage.errors.required">Typologie  is required</div>
+                </div>
+                 </div>
+                
+                 <div class="form-group">
+                    <label for="exampleInputPassword1"> Composition</label>
+                    
+                        <textarea  formControlName="Composition" class="form-control" rows="3" placeholder=" ..." [ngClass]="{ 'is-invalid': submitted && f.Composition.errors }"></textarea>
+                        <div *ngIf="submitted && f.Composition.errors" class="invalid-feedback">
+                            <div *ngIf="f.Composition.errors.required">Composition  is required</div>
+                        </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">prix par mois</label>
+                    <input type="text"  formControlName="prix"  class="form-control" id="exampleInputPassword1" placeholder=""[ngClass]="{ 'is-invalid': submitted && f.prix.errors }">
+                    <div *ngIf="submitted && f.prix.errors" class="invalid-feedback">
+                        <div *ngIf="f.prix.errors.required">prix  is required</div>
+                    </div>
+                  </div>
+              <div class="form-group">
+                <label for="exampleInputFile">ajouter images </label>
+                <div class="input-group">
+                  <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="exampleInputFile" (change)="onFileSelect($event.target)">
+                    <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                  </div>
+                  <div class="input-group-append">
+                    <span class="input-group-text" id="">ajouter</span>
+                  </div>
+                </div>
+              </div>
+           
+            </div>
+            <!-- /.card-body -->
+
+            <div class="card-footer">
+              <button type="submit" class="btn btn-primary btn-space  ">Ajouter</button>
+           
+            <button class="btn btn-primary btn-space  " type="reset" (click)="onReset()">annuler</button>
+              </div>
+          </form>
+        </div>
