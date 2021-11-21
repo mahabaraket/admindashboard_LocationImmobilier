@@ -65,7 +65,7 @@
                             </i>
                            
                         </a>
-                        <a class="btn btn-info btn-sm" href="#">
+                        <a class="btn btn-info btn-sm"(click)="openModal(editProfileModal)">
                             <i class="fas fa-pencil-alt">
                                 modifier
                             </i>
@@ -87,6 +87,69 @@
       <!-- /.card-body -->
     </div>
     <!-- /.card -->
+
+    <ng-template #editProfileModal let-modal>
+        <div class="modal-header">
+         <h5 class="modal-title" id="editProfileLabel">Update bien</h5>
+         <button type="button" class="close" (click)="modal.dismiss()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+         </button>
+        </div>
+        
+        <div class="modal-body">
+         <form [formGroup]="editProfileForm" (ngSubmit)="onSubmit()">
+          <div class="form-group row">
+           <label for="propName" class="col-sm-4 col-form-label">proprietaire</label>
+           <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="propName" id="propName">
+           </div>
+          </div>
+          <div class="form-group row">
+           <label for="place" class="col-sm-4 col-form-label">Emplacement</label>
+           <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="place" id="place">
+           </div>
+          </div>
+          <div class="form-group row">
+           <label for="Superficie" class="col-sm-4 col-form-label">Superficie</label>
+           <div class="col-sm-8">
+            <input type="text" class="form-control" formControlName="Superficie" id="Superficie">
+           </div>
+          </div>
+          <div class="form-group row">
+           <label for="email" class="col-sm-4 col-form-label">Typologie</label>
+           <div class="col-sm-8">
+            <input type="text" class="form-control"formControlName="Typologie" id="Typologie">
+           </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="etage" class="col-sm-4 col-form-label">Etage</label>
+            <div class="col-sm-8">
+             <input type="text" class="form-control"formControlName="etage" id="etage">
+            </div>
+           </div>
+           <div class="form-group row">
+            <label for="composition" class="col-sm-4 col-form-label">Composition</label>
+            <div class="col-sm-8">
+             <input type="text" class="form-control"formControlName="composition" id="composition">
+            </div>
+           </div>
+
+           <div class="form-group row">
+            <label for="prix" class="col-sm-4 col-form-label">Prix</label>
+            <div class="col-sm-8">
+             <input type="text" class="form-control"formControlName="prix" id="prix">
+            </div>
+           </div>
+
+          <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Close</button>
+           <button type="submit" class="btn btn-primary">Save changes</button>
+          </div>
+         </form>
+        </div>
+       </ng-template>
 
   </section>
   <!-- /.content -->
