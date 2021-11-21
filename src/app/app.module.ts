@@ -16,6 +16,8 @@ import { GererTechComponent } from './gerer-tech/gerer-tech.component';
 import { ListTechComponent } from './list-tech/list-tech.component';
 import { ProfilTechComponent } from './profil-tech/profil-tech.component';
 import { ModifierProfilTechComponent } from './modifier-profil-tech/modifier-profil-tech.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 
@@ -38,7 +40,7 @@ import { ModifierProfilTechComponent } from './modifier-profil-tech/modifier-pro
     ModifierProfilTechComponent,
   ],
   imports: [
-   
+    NgbModule,
      HttpClientModule,
     BrowserModule,
     AppRoutingModule,
