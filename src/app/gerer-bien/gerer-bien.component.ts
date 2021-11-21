@@ -13,10 +13,24 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class GererBienComponent implements OnInit {
   listBiens: any[];
   editProfileForm: FormGroup;
+  bienByid: any;
 
   constructor(private crudService:bienservice,private fb: FormBuilder, private modalService: NgbModal) { }
 
   ngOnInit(): void {
+
+
+    this.editProfileForm=this.fb.group({
+      propName: [''],
+      adress:[''],
+      typologie:[''],
+      superficie:[''],
+      etage:[''],
+      composition:[''],
+      prix:['']
+  
+    });
+
     this.crudService.getBiens().subscribe((res) => {
       this.listBiens = res;
       //this.Description=this.listBiens.prix+this.listBiens.typologie+this.listBiens.etage;
@@ -41,27 +55,47 @@ export class GererBienComponent implements OnInit {
   }
 
 
-  openModal(targetModal:any) {
+  getBienbyid(id:any)
+  {
+   
+    this.crudService.findBienByid(id).subscribe((res) => {
+      this.bienByid=res;
+      console.log("find bien by id ",this.bienByid)
+      
+    });    
+  }
+
+
+  openModal(targetModal:any,id:any) {
+    this.getBienbyid(id);
   this.modalService.open(targetModal, {
    centered: true,
    backdrop: 'static'
   });
  
-  this.editProfileForm.patchValue({
-    propName: 'user.firstname',
-    place:' user.lastname',
-    Typologie:' user.username',
-    Superficie:' user.email',
-    etage:'etage',
-    composition:'composition',
-    prix:'prix'
-
-  });
+  
  }
 
  onSubmit() {
+  let bien={ 
+    composition:this.editProfileForm.controls.composition.value,    
+    adress:this.editProfileForm.controls.adress.value,
+    etage:this.editProfileForm.controls.etage.value,
+    etat:false,
+   // picbyte :this.image ,
+    prix:this.editProfileForm.controls.prix.value,
+    proprietaire:this.editProfileForm.controls.propName.value, 
+    superficie:this.editProfileForm.controls.superficie.value,
+    typologie:this.editProfileForm.controls.typologie.value,
+  }
+  console.log("res:",bien);
+  console.log("id curent update:",this.bienByid.id);
+
+  this.crudService.updateBien(bien,this.bienByid.id).subscribe((res)=>{
+    console.log("bien updated")
+  });
   this.modalService.dismissAll();
-  console.log("res:", this.editProfileForm.getRawValue());
+
  }
 
 }

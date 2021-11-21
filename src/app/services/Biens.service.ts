@@ -61,8 +61,8 @@ export class bienservice {
   }
 
 
-  updateBien(id:any): Observable<any> {
-    return this.http.put<bienImmobilier>(this.BiensUrl, id, httpOptions).pipe(
+  updateBien(bien: bienImmobilier,id:any): Observable<any> {
+    return this.http.put<bienImmobilier>(this.BiensUrl+"/"+ id,bien, httpOptions).pipe(
       tap((newBien: bienImmobilier) => console.log(`update bien`)),
       catchError(this.handleError<bienImmobilier>('update'))
     );
@@ -75,4 +75,13 @@ export class bienservice {
       catchError(this.handleError<bienImmobilier>('delete'))
     );
   }
+
+  findBienByid(id:any) {
+    return this.http.get(this.BiensUrl+"/"+id).pipe(
+     // tap((newBien: bienImmobilier) => console.log(`update bien`)),
+      catchError(this.handleError<bienImmobilier>('delete'))
+    );
+  }
+
+ 
 }
