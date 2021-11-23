@@ -9,6 +9,8 @@ import { ListTechComponent } from './list-tech/list-tech.component';
 import { LoginComponent } from './login/login.component';
 import { ModifierProfilTechComponent } from './modifier-profil-tech/modifier-profil-tech.component';
 import { ProfilTechComponent } from './profil-tech/profil-tech.component';
+import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
+
 const routes: Routes = [
  
   { path:'login',
@@ -17,6 +19,10 @@ component:LoginComponent
 },
 { path:'addBien',
 component:AddBienComponent
+  
+},
+{ path:'consultReclamation',
+component:ConsulReclamationComponent
   
 },
 { path:'listBien',

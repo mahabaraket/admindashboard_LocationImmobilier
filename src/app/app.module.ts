@@ -17,6 +17,7 @@ import { ListTechComponent } from './list-tech/list-tech.component';
 import { ProfilTechComponent } from './profil-tech/profil-tech.component';
 import { ModifierProfilTechComponent } from './modifier-profil-tech/modifier-profil-tech.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
 
 
 
@@ -38,6 +39,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     ListTechComponent,
     ProfilTechComponent,
     ModifierProfilTechComponent,
+    ConsulReclamationComponent,
   ],
   imports: [
     NgbModule,
