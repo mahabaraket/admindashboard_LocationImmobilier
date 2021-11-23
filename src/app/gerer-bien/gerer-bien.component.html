@@ -59,13 +59,13 @@
 
                     </td>
                     <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
+                       <!--  <a class="btn btn-primary btn-sm" href="#">
                             <i class="fas fa-folder">
                                 consulter
                             </i>
                            
-                        </a>
-                        <a class="btn btn-info btn-sm"(click)="openModal(editProfileModal)">
+                        </a> -->
+                        <a class="btn btn-info btn-sm"(click)="openModal(editProfileModal,item.id)">
                             <i class="fas fa-pencil-alt">
                                 modifier
                             </i>
@@ -101,45 +101,45 @@
           <div class="form-group row">
            <label for="propName" class="col-sm-4 col-form-label">proprietaire</label>
            <div class="col-sm-8">
-            <input type="text" class="form-control" formControlName="propName" id="propName">
+            <input type="text" class="form-control" formControlName="propName"   id="propName">
            </div>
           </div>
           <div class="form-group row">
-           <label for="place" class="col-sm-4 col-form-label">Emplacement</label>
+           <label for="adress" class="col-sm-4 col-form-label">Emplacement</label>
            <div class="col-sm-8">
-            <input type="text" class="form-control" formControlName="place" id="place">
+            <input type="text" class="form-control" [(ngModel)]="bienByid.adress" formControlName="adress" id="adress">
            </div>
           </div>
           <div class="form-group row">
-           <label for="Superficie" class="col-sm-4 col-form-label">Superficie</label>
+           <label for="superficie" class="col-sm-4 col-form-label">Superficie</label>
            <div class="col-sm-8">
-            <input type="text" class="form-control" formControlName="Superficie" id="Superficie">
+            <input type="text" class="form-control" [(ngModel)]="bienByid.superficie" formControlName="superficie" id="superficie">
            </div>
           </div>
           <div class="form-group row">
-           <label for="email" class="col-sm-4 col-form-label">Typologie</label>
+           <label for="typologie" class="col-sm-4 col-form-label">Typologie</label>
            <div class="col-sm-8">
-            <input type="text" class="form-control"formControlName="Typologie" id="Typologie">
+            <input type="text" class="form-control" [(ngModel)]="bienByid.typologie" formControlName="typologie" id="typologie">
            </div>
           </div>
 
           <div class="form-group row">
             <label for="etage" class="col-sm-4 col-form-label">Etage</label>
             <div class="col-sm-8">
-             <input type="text" class="form-control"formControlName="etage" id="etage">
+             <input type="text" class="form-control" [(ngModel)]="bienByid.etage" formControlName="etage" id="etage">
             </div>
            </div>
            <div class="form-group row">
             <label for="composition" class="col-sm-4 col-form-label">Composition</label>
             <div class="col-sm-8">
-             <input type="text" class="form-control"formControlName="composition" id="composition">
+             <input type="text" class="form-control" [(ngModel)]="bienByid.composition" formControlName="composition" id="composition">
             </div>
            </div>
 
            <div class="form-group row">
             <label for="prix" class="col-sm-4 col-form-label">Prix</label>
             <div class="col-sm-8">
-             <input type="text" class="form-control"formControlName="prix" id="prix">
+             <input type="text" class="form-control" [(ngModel)]="bienByid.prix" formControlName="prix" id="prix">
             </div>
            </div>
 

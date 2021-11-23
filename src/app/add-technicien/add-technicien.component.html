@@ -30,24 +30,18 @@
                     <div *ngIf="f.Nom.errors.required">Name is required</div>
                 </div>
                 </div>
-              <div class="form-group">
-                <label for="exampleInputPassword1">age</label>
-                <input formControlName="age"  type="text" class="form-control" id="exampleInputPassword1" placeholder=""[ngClass]="{ 'is-invalid': submitted && f.age.errors }">
-                <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
-                    <div *ngIf="f.age.errors.required">age  is required</div>
-                </div>
-              </div>
+              
               
               <div class="form-group">
-                <label for="exampleInputPassword1">specilalité </label>
-                <select  formControlName="specilalite" class="form-control select2" style="width: 100%;"[ngClass]="{ 'is-invalid': submitted && f.specilalite.errors }" >
+                <label for="exampleInputPassword1">specialité </label>
+                <select  formControlName="specialite" class="form-control select2" style="width: 100%;"[ngClass]="{ 'is-invalid': submitted && f.specialite.errors }" >
                     <option>plombier</option>
                     <option>Électricien</option>
                     
                     <option></option>
                   </select>
-                  <div *ngIf="submitted && f.specilalite.errors" class="invalid-feedback">
-                    <div *ngIf="f.specilalite.errors.required">specilalite  is required</div>
+                  <div *ngIf="submitted && f.specialite.errors" class="invalid-feedback">
+                    <div *ngIf="f.specialite.errors.required">specilalite  is required</div>
                 </div>
               </div>
               <div class="form-group">
