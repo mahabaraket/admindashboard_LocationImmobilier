@@ -26,7 +26,8 @@ export class GererTechComponent implements OnInit {
   {
    
     this.crudService.deleteTech(id).subscribe(() => {
-      
+      alert("technicien supprimer avec success !")
+
       this.crudService.getTech().subscribe((res) => {
         this.listTech= res;
         this.listTech=this.listTech.filter(item=>item.role=="tech");

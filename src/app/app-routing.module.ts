@@ -10,6 +10,10 @@ import { LoginComponent } from './login/login.component';
 import { ModifierProfilTechComponent } from './modifier-profil-tech/modifier-profil-tech.component';
 import { ProfilTechComponent } from './profil-tech/profil-tech.component';
 import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
+import { ConsultContratComponent } from './consult-contart/consult-contart.component';
+import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
+
+
 
 const routes: Routes = [
  
@@ -27,6 +31,14 @@ component:ConsulReclamationComponent
 },
 { path:'listBien',
 component:ListBienComponent
+  
+},
+{ path:'consultContrat',
+component:ConsultContratComponent
+  
+},
+{ path:'gererDemande',
+component:GererDemandeComponent
   
 },
 { path:'gererBien',

@@ -48,6 +48,8 @@ export class AddTechnicienComponent implements OnInit {
     role:"tech"
    }
       this.crudService.createTech(Tech).subscribe((res)=>{
+        alert("technicien ajouter avec success !")
+
         console.log("added succ",res);
       });
 

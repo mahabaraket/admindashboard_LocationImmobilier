@@ -18,6 +18,8 @@ import { ProfilTechComponent } from './profil-tech/profil-tech.component';
 import { ModifierProfilTechComponent } from './modifier-profil-tech/modifier-profil-tech.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
+import { ConsultContratComponent } from './consult-contart/consult-contart.component';
+import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
 
 
 
@@ -40,6 +42,8 @@ import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamat
     ProfilTechComponent,
     ModifierProfilTechComponent,
     ConsulReclamationComponent,
+    ConsultContratComponent,
+    GererDemandeComponent,
   ],
   imports: [
     NgbModule,

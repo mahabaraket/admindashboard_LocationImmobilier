@@ -44,7 +44,8 @@ export class GererBienComponent implements OnInit {
   {
    
     this.crudService.deleteBien(id).subscribe(() => {
-      
+      alert("Bien supprimer avec success !")
+
       this.crudService.getBiens().subscribe((res) => {
         this.listBiens = res;
         console.log("bien supprimer")
@@ -92,6 +93,8 @@ export class GererBienComponent implements OnInit {
   console.log("id curent update:",this.bienByid.id);
 
   this.crudService.updateBien(bien,this.bienByid.id).subscribe((res)=>{
+    alert("Bien mise a jour avec success !")
+
     console.log("bien updated")
   });
   this.modalService.dismissAll();

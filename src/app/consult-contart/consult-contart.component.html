@@ -1,0 +1,107 @@
+<section class="content">
+
+    <!-- Default box -->
+    <div class="card">
+      <div class="card-header">
+        <h3 class="card-title">Liste de Contarts</h3>
+
+        <div class="card-tools">
+          <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+            <i class="fas fa-minus"></i></button>
+ 
+        </div>
+      </div>
+      <div class="card-body p-0">
+        <table class="table table-striped projects">
+            <thead>
+                <tr>
+                    <th style="width: 1%">
+                        id
+                    </th>
+                    <th >
+                        Contrat name
+                    </th>
+                    <th >
+                         Nom
+                    </th>
+
+                    <th >
+                         Date deb
+                    </th>
+
+                    <th  >
+                        Date fin
+                    </th>
+                    <th >
+                        Localisation 
+                    </th>
+
+                    <th >
+                        Statu
+                    </th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of listContrat" >
+                    <td>
+                        #
+                    </td>
+                    <td>
+                       {{item.contratname}}
+
+                    </td>
+                    <td>
+                    {{item.name}}
+                    </td>
+                        
+                    <td>
+                   {{item.dateDebut}}
+                    </td>
+                    <td>
+                    
+                        {{item.dateFin}}
+
+                    </td>
+                    <td>
+                        {{item.localisation}}
+
+                    </td>
+                    <td>
+                        <span class="badge badge-success" *ngIf="item.contrat==1">Actif</span>
+                        <span class="badge badge-danger" *ngIf="item.contrat==0">non actif</span>
+
+                    </td>
+                    <td class="project-actions text-right">
+                       <!--  <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-folder">
+                                consulter
+                            </i>
+                           
+                        </a>
+                        <a class="btn btn-info btn-sm" href="#">
+                            <i class="fas fa-pencil-alt">
+                                modifier
+                            </i>
+                        
+                        </a> -->
+                        <a class="btn btn-danger btn-sm" >
+                            <i class="fas fa-trash" (click)="deleteContrat(item.id)">
+                                supprimer
+                            </i>
+                            
+                        </a>
+                    </td>
+               
+                </tr>
+                
+            </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+  </section>
+  <!-- /.content -->
+<!-- /.content-wrapper -->

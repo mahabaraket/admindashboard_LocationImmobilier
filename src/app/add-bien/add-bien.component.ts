@@ -92,7 +92,10 @@ export class AddBienComponent implements OnInit {
       }
      // console.log("tyyyyypppppeeee",this.image.getAll())
       console.log("befor created",bien);
-    return this.crudService.createbien(bien).subscribe((res)=>{console.log(res,"after crated")})
+    return this.crudService.createbien(bien).subscribe((res)=>{
+      alert("Ajout succesfuly")
+
+      console.log(res,"after crated")})
   }
   onReset() {
     this.submitted = false;
