@@ -16,6 +16,9 @@ import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
 
 
 const routes: Routes = [
+
+  
+
  
   { path:'login',
 component:LoginComponent
@@ -57,11 +60,11 @@ component:GererTechComponent
 component:ListTechComponent
   
 },
-{ path:'profilTech',
+/* { path:'profilTech',
 component:ProfilTechComponent
   
-},
-{ path:'modifierProfil',
+}, */
+{ path:'profilTech',
 component:ModifierProfilTechComponent
   
 },

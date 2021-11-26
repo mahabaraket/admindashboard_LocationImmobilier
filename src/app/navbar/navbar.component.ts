@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  currentUser=null;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  clearStorage()
+  {
+    localStorage.clear();
   }
 
 }

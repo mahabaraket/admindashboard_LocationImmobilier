@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { TechService } from '../services/tech.service';
 import { MustMatch } from '../_helpers/must-match.validator';
 
 @Component({
@@ -10,11 +11,19 @@ import { MustMatch } from '../_helpers/must-match.validator';
 export class ModifierProfilTechComponent implements OnInit {
   motDePasseForm: FormGroup;
   submitted = false;
+  infoUser:any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,private crudService:TechService) { }
 
   ngOnInit(): void {
+
+    this.infoUser=localStorage.getItem("infoUser",);
+    this.infoUser=JSON.parse(this.infoUser);
+    console.log("info user ", this.infoUser)
   this.motDePasseForm = this.formBuilder.group({
+    email :[this.infoUser.email, Validators.required],
+    firstName :[this.infoUser.firstName, Validators.required],
+    lastName :[this.infoUser.lastName, Validators.required],
     passwordAn :['', Validators.required],
     password: ['', [Validators.required, Validators.minLength(6)]],
     confirmPassword: ['', Validators.required]
@@ -31,10 +40,37 @@ export class ModifierProfilTechComponent implements OnInit {
       // stop here if form is invalid
       if (this.motDePasseForm.invalid) {
           return;
+      }else
+      {
+        localStorage.removeItem("infoUser");
+        let upTech={
+          specialite:this.infoUser.specialite,
+          role:this.infoUser.role,
+          firstName:this.f.firstName.value,
+          lastName:this.f.lastName.value,
+          email:this.f.email.value,
+          password:this.f.password.value
+        }
+        let infoUser={
+          id:this.infoUser.id,
+         specialite:this.infoUser.specialite,
+          role:this.infoUser.role,
+          firstName:this.f.firstName.value,
+          lastName:this.f.lastName.value,
+          email:this.f.email.value,
+          password:this.f.password.value,
+
+        }
+        localStorage.setItem("infoUser",JSON.stringify(infoUser))
+        //this.infoUser=JSON.parse(this.infoUser);
+        return this.crudService.updateTech(upTech,this.infoUser.id).subscribe(()=>{
+          console.log("up tech",upTech)
+  
+        })
       }
 
+
       // display form values on success
-      alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.motDePasseForm.value, null, 4));
   }
   onReset() {
     this.submitted = false;

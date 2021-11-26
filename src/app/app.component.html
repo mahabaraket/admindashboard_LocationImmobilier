@@ -1,17 +1,19 @@
 <div class="wrapper">
- <app-navbar></app-navbar>
+ <app-navbar *ngIf="currentUser!=null"></app-navbar>
 
   <!-- Main Sidebar Container -->
-<app-sidebar></app-sidebar>
+<app-sidebar *ngIf="currentUser!=null"></app-sidebar>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" *ngIf="currentUser!=null" >
     <!-- Content Header (Page header) -->
     <div class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Espace Admin</h1>
+            <h1 class="m-0 text-dark" *ngIf="role=='Ad'">Espace Admin</h1>
+            <h1 class="m-0 text-dark" *ngIf="role=='Tech'">Espace Technicien</h1>
+
            <!-- <h1 class="m-0 text-dark">Espace Technicien((afficher lorsque user est technicien))</h1>--> 
           </div><!-- /.col -->
           <div class="col-sm-6">
@@ -23,12 +25,15 @@
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-    <router-outlet></router-outlet>
+    <router-outlet *ngIf="currentUser!=null"></router-outlet>
 
     <!-- Main content -->
    
     <!-- /.content -->
   </div>
+
+  <router-outlet *ngIf="currentUser==null"></router-outlet>
+
   <!-- /.content-wrapper -->
 
   <!-- Control Sidebar -->
@@ -38,6 +43,6 @@
   <!-- /.control-sidebar -->
  
   <!-- Main Footer -->
-<app-footer></app-footer>
+<app-footer *ngIf="currentUser!=null"></app-footer>
 </div>
 <!-- ./wrapper -->

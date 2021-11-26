@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent implements OnInit {
+  role:any;
+
 
   constructor() { }
 
   ngOnInit(): void {
+    this.role=localStorage.getItem("role");
   }
 
 }
