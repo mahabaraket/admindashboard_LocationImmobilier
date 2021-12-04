@@ -20,7 +20,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
 import { ConsultContratComponent } from './consult-contart/consult-contart.component';
 import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
-
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from '../environments/environment';
 
 
 
@@ -52,6 +54,11 @@ import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    AngularFireModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -18,10 +18,10 @@ import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
 const routes: Routes = [
 
   
-
+  {path:'', redirectTo:'login', pathMatch:'full' },
  
   { path:'login',
-component:LoginComponent
+component:LoginComponent 
   
 },
 { path:'addBien',

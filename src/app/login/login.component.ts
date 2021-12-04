@@ -36,6 +36,8 @@ export class LoginComponent implements OnInit {
   }
 
   get f() { return this.login.controls; }
+
+  
   onSubmit(){
     this.submitted=true;
 

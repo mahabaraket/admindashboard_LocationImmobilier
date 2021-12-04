@@ -1,7 +1,11 @@
 import { formatDate } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { bienservice } from '../services/Biens.service'; 
+import { AngularFireStorage } from '@angular/fire/compat/storage';
+import { finalize } from 'rxjs/operators';
+import { Observable } from 'rxjs';
 @Component({
   selector: 'app-add-bien',
   templateUrl: './add-bien.component.html',
@@ -14,10 +18,13 @@ export class AddBienComponent implements OnInit {
   public obj: any = {};
   image: any;
   false: any;
-
+  filePath!:String;
+  downloadURL!: Observable<string>;
+  fb = '';
  
 
-  constructor(private formBuilder: FormBuilder, public crudService:bienservice) { }
+  constructor(private formBuilder: FormBuilder, public crudService:bienservice 
+    ,private storage: AngularFireStorage, private httpClient: HttpClient) { }
 
   ngOnInit(): void {
   this.addBienForm = this.formBuilder.group({
@@ -31,45 +38,12 @@ export class AddBienComponent implements OnInit {
  });
 
   }
-
-  
-
- 
-
-  onFileSelect(input:any) {
-    console.log(input.files);
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-      reader.onload = (e: any) => {
-        console.log('Got here: ', e.target.result);
-        const formdata = new FormData();
-        this.false=0;
-       /*  formdata.append("composition",this.addBienForm.controls.Composition.value);
-        formdata.append("adress",this.addBienForm.controls.place.value); 
-        formdata.append("etage",this.addBienForm.controls.etage.value);    
-        formdata.append("etat",this.false);    
-        formdata.append("picbyte", input.files[0]);
-        formdata.append("prix", this.addBienForm.controls.prix.value);
-        formdata.append("proprietaire",this.addBienForm.controls.propName.value);
-        formdata.append("superficie",this.addBienForm.controls.Superficie.value);
-        formdata.append("typologie",this.addBienForm.controls.Typologie.value); */
-        formdata.append("picbyte", input.files[0]);
-
-        this.image= formdata//e.target.result.substring(22);
-
-
-        console.log('formdata: ',formdata);
-
-        this.obj.photoUrl = e.target.result;
-      }
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-
   
 
   get f() { return this.addBienForm.controls; }
 
+
+  //add biens
   onSubmit() {
       this.submitted = true;
 
@@ -84,7 +58,7 @@ export class AddBienComponent implements OnInit {
         adress:this.addBienForm.controls.place.value,
         etage:this.addBienForm.controls.etage.value,
         etat:false,
-       // picbyte :this.image ,
+        image :this.fb ,
         prix:this.addBienForm.controls.prix.value,
         proprietaire:this.addBienForm.controls.propName.value, 
         superficie:this.addBienForm.controls.Superficie.value,
@@ -97,9 +71,42 @@ export class AddBienComponent implements OnInit {
 
       console.log(res,"after crated")})
   }
+
+  //resert form
   onReset() {
     this.submitted = false;
     this.addBienForm.reset();
+}
+
+
+
+//upload image
+onFileSelected(event: any) {
+   
+  var n = Date.now();
+  this.filePath = event.target.files[0]
+  const file = event.target.files[0];
+  const filePath = `Produits/${n}`;
+  const fileRef = this.storage.ref(filePath);
+  const task = this.storage.upload(`Produits/${n}`, file);
+  task
+    .snapshotChanges()
+    .pipe(
+      finalize(() => {
+        this.downloadURL = fileRef.getDownloadURL();
+        this.downloadURL.subscribe((url) => {
+          if (url) {
+            this.fb = url;
+          }
+          console.log(this.fb);
+        });
+      })
+    )
+    .subscribe((url) => {
+      if (url) {
+        console.log(url);
+      }
+    });
 }
 }
 

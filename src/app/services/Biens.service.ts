@@ -13,7 +13,7 @@ class bienImmobilier{
         adress:any;
         etage:any;
         etat:boolean;
-      //  picbyte:Byte[];
+        image : any;
         prix:any;
         proprietaire:any;
         superficie:any;
@@ -61,10 +61,10 @@ export class bienservice {
   }
 
 
-  updateBien(bien: bienImmobilier,id:any): Observable<any> {
-    return this.http.put<bienImmobilier>(this.BiensUrl+"/"+ id,bien, httpOptions).pipe(
-      tap((newBien: bienImmobilier) => console.log(`update bien`)),
-      catchError(this.handleError<bienImmobilier>('update'))
+  updateBien(bien: any,id:any): Observable<any> {
+    return this.http.put<any>(this.BiensUrl+"/"+ id,bien, httpOptions).pipe(
+      tap((newBien: any) => console.log(`update bien`)),
+      catchError(this.handleError<any>('update'))
     );
   }
 
