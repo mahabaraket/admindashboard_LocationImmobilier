@@ -36,7 +36,7 @@ export class ContartService {
     };
   }
 
-  private ContratsUrl = 'http://localhost:8181/api/contrats';
+  private ContratsUrl = 'http://localhost:9195/api/contrats';
 
 
   constructor(private http:HttpClient) { }

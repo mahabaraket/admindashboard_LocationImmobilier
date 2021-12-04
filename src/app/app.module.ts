@@ -20,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
 import { ConsultContratComponent } from './consult-contart/consult-contart.component';
 import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
+import { ReclamationTechComponent } from './reclamation-tech/reclamation-tech.component';
 
 
 
@@ -44,6 +45,7 @@ import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
     ConsulReclamationComponent,
     ConsultContratComponent,
     GererDemandeComponent,
+    ReclamationTechComponent,
   ],
   imports: [
     NgbModule,

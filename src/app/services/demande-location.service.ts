@@ -39,7 +39,7 @@ export class DemandeLocationService {
     };
   }
 
-  private DemandeLocsUrl = 'http://localhost:8181/api/demandeslocation';
+  private DemandeLocsUrl = 'http://localhost:9195/api/demandeslocation';
 
 
   constructor(private http:HttpClient) { }
