@@ -13,7 +13,7 @@ import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamat
 import { ConsultContratComponent } from './consult-contart/consult-contart.component';
 import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
 
-
+import { ReclamationTechComponent } from './reclamation-tech/reclamation-tech.component';
 
 const routes: Routes = [
 
@@ -22,6 +22,10 @@ const routes: Routes = [
  
   { path:'login',
 component:LoginComponent 
+  
+},
+{ path:'reclamationTech',
+component:ReclamationTechComponent
   
 },
 { path:'addBien',

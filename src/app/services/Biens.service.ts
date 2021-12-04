@@ -41,7 +41,7 @@ export class bienservice {
       return of(result as T);
     };
   }
-  private BiensUrl = 'http://localhost:8180/api/biens';
+  private BiensUrl = 'http://localhost:9195/api/biens';
 
 
   constructor(private http:HttpClient) { }
