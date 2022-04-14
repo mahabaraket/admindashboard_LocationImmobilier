@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ReclamationAdService } from '../services/reclamation-ad.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-consul-reclamation',

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../_helpers/must-match.validator';
 import { TechService } from '../services/tech.service'; 
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 

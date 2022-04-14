@@ -20,14 +20,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ConsulReclamationComponent } from './consul-reclamation/consul-reclamation.component';
 import { ConsultContratComponent } from './consult-contart/consult-contart.component';
 import { GererDemandeComponent } from './gerer-demande/gerer-demande.component';
-<<<<<<< HEAD
+
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from '../environments/environment';
-=======
+
 import { ReclamationTechComponent } from './reclamation-tech/reclamation-tech.component';
 
->>>>>>> 6db1e938a84a801d82edd90fc27c314fdf75b81b
+
 
 
 
@@ -51,7 +51,7 @@ import { ReclamationTechComponent } from './reclamation-tech/reclamation-tech.co
     ConsulReclamationComponent,
     ConsultContratComponent,
     GererDemandeComponent,
-    ReclamationTechComponent,
+    ReclamationTechComponent
   ],
   imports: [
     NgbModule,

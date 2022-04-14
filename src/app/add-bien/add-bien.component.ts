@@ -6,6 +6,7 @@ import { bienservice } from '../services/Biens.service';
 import { AngularFireStorage } from '@angular/fire/compat/storage';
 import { finalize } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { ReactiveFormsModule } from '@angular/forms';
 @Component({
   selector: 'app-add-bien',
   templateUrl: './add-bien.component.html',

@@ -34,11 +34,11 @@ export class TechService {
       return of(result as T);
     };
   }
-<<<<<<< HEAD
-  private UsersUrl = 'http://localhost:8180/api/users';
-=======
+
+ // private UsersUrl = 'http://localhost:8180/api/users';
+
   private UsersUrl = 'http://localhost:9195/api/users';
->>>>>>> 6db1e938a84a801d82edd90fc27c314fdf75b81b
+
 
   constructor(private http:HttpClient) { }
 
